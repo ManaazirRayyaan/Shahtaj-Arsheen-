@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ShahTaj | Student & Aspiring Web & Graphic Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of ShahTaj, a 16-year-old high school student from Bangalore passionate about web design and graphic design."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --card: #111827;
+      --accent: #6366f1;
+      --accent-soft: rgba(99, 102, 241, 0.12);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --shadow-soft: 0 18px 60px rgba(15, 23, 42, 0.65);
+      --radius-xl: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Layout */
+
+    .wrapper {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* Navbar */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.95),
+        rgba(2, 6, 23, 0.85),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #a5b4fc, #4f46e5, #111827);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      box-shadow: 0 10px 30px rgba(129, 140, 248, 0.6);
+    }
+
+    .brand-text-main {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-text-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      font-size: 0.88rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 2px;
+      width: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #6366f1, #a855f7);
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2.5rem;
+      padding-top: 3rem;
+      padding-bottom: 3.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+      background: linear-gradient(
+        90deg,
+        rgba(99, 102, 241, 0.16),
+        rgba(59, 130, 246, 0.15),
+        rgba(8, 47, 73, 0.35)
+      );
+      border: 1px solid rgba(129, 140, 248, 0.45);
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 4vw, 3.1rem);
+      margin: 1rem 0 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #6366f1, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+    }
+
+    .hero-subtitle strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.7rem;
+    }
+
+    .btn-main,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.2s ease,
+        background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-main {
+      background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+      color: var(--text-main);
+      box-shadow: 0 16px 40px rgba(79, 70, 229, 0.5);
+      font-weight: 500;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 45px rgba(79, 70, 229, 0.7);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.75);
+      color: var(--text-muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: #6366f1;
+      color: var(--text-main);
+      background: radial-gradient(circle at top, rgba(99, 102, 241, 0.18), #020617);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 1.7rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-item {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .hero-meta-item span {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    /* Hero card */
+
+    .hero-card {
+      background: radial-gradient(circle at top, #111827, #020617);
+      border-radius: 26px;
+      padding: 1.6rem 1.6rem 1.2rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(
+        circle at 10% 0,
+        rgba(129, 140, 248, 0.1),
+        transparent 55%
+      );
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .tag-pill {
+      display: inline-flex;
+      gap: 0.35rem;
+      align-items: center;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(129, 140, 248, 0.6);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .tag-pill span {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .avatar-circle {
+      width: 86px;
+      height: 86px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 25% 0, #a5b4fc, #6366f1, #111827);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.9rem;
+      box-shadow: 0 20px 55px rgba(79, 70, 229, 0.85);
+      border: 3px solid rgba(15, 23, 42, 0.9);
+    }
+
+    .avatar-circle span {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-card-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .hero-card-role {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-card-location {
+      font-size: 0.78rem;
+      color: #cbd5f5;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .hero-progress {
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-progress-label {
+      font-size: 0.75rem;
+      color: #e5e7eb;
+      margin-bottom: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+    }
+
+    .hero-progress-bar {
+      width: 100%;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(30, 64, 175, 0.4);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-progress-fill {
+      position: absolute;
+      inset: 0;
+      width: 65%;
+      background: linear-gradient(90deg, #4f46e5, #a855f7);
+      border-radius: inherit;
+    }
+
+    .mentor-note {
+      border-radius: 16px;
+      padding: 0.7rem 0.9rem;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .mentor-note strong {
+      color: #e5e7eb;
+    }
+
+    .corner-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.7rem;
+      border-radius: 999px;
+      background: rgba(8, 47, 73, 0.95);
+      border: 1px solid rgba(59, 130, 246, 0.7);
+      color: #bfdbfe;
+    }
+
+    /* Sections */
+
+    section {
+      padding: 2.5rem 0 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-heading h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .section-heading p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      max-width: 24rem;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, #020617, #020617);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      padding: 1.2rem 1.3rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.85);
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .info-list {
+      list-style: none;
+      margin-top: 0.7rem;
+      font-size: 0.82rem;
+    }
+
+    .info-list li + li {
+      margin-top: 0.35rem;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+    }
+
+    .info-value {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-tagline {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .skill-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .skill-pill {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+    }
+
+    .skill-meter-group {
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .skill-meter-group + .skill-meter-group {
+      margin-top: 0.5rem;
+    }
+
+    .meter-bar {
+      margin-top: 0.25rem;
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(31, 41, 55, 0.9);
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #a855f7, #6366f1);
+      width: var(--level, 50%);
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.3rem;
+    }
+
+    .project-card {
+      background: radial-gradient(circle at top, #020617, #020617);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      padding: 1.1rem 1.15rem;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.85);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-tag {
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .project-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.55rem;
+    }
+
+    .project-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .project-meta span {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    /* Timeline */
+
+    .timeline {
+      border-left: 1px solid rgba(148, 163, 184, 0.5);
+      padding-left: 1.1rem;
+      margin-top: 0.4rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.3rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.7rem;
+      top: 0.22rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #6366f1;
+      box-shadow: 0 0 10px rgba(129, 140, 248, 0.9);
+    }
+
+    .timeline-title {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .timeline-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-date {
+      font-size: 0.74rem;
+      color: #9ca3af;
+      margin-top: 0.15rem;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.4fr) minmax(0, 2fr);
+      gap: 1.8rem;
+    }
+
+    .contact-highlight {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-highlight strong {
+      color: #e5e7eb;
+    }
+
+    .contact-detail {
+      font-size: 0.82rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-detail span {
+      color: var(--text-muted);
+    }
+
+    .contact-detail a {
+      color: #e5e7eb;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.75);
+    }
+
+    .contact-detail a:hover {
+      color: #a5b4fc;
+      border-bottom-style: solid;
+    }
+
+    .contact-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.7rem;
+    }
+
+    .contact-chip {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+      text-decoration: none;
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .contact-chip:hover {
+      border-color: #6366f1;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 0.3rem;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.15rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.5rem 0.65rem;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-main);
+      font-size: 0.82rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      font-family: inherit;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.6);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-note {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .btn-send {
+      margin-top: 0.2rem;
+      align-self: flex-start;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.55);
+      margin-top: 3rem;
+      padding-top: 1.2rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    footer .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: #9ca3af;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #e5e7eb;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav ul {
+        display: none;
+      }
+
+      header {
+        border-radius: 0 0 18px 18px;
+      }
+
+      .wrapper {
+        padding-inline: 1.1rem;
+      }
+
+      .hero {
+        padding-top: 2.1rem;
+      }
+
+      .hero-actions {
+        gap: 0.6rem;
+      }
+    }
+    .avatar-circle {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  overflow: hidden; /* 🔑 THIS IS THE KEY */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 55px rgba(79, 70, 229, 0.85);
+  border: 3px solid rgba(15, 23, 42, 0.9);
+}
+
+    .pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* crops image nicely */
+  object-position: center; /* centers the face */
+  display: block;
+}
+#arshi {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-logo">
+          
+        </div>
+        <div>
+          <div class="brand-text-main">ShahTaj</div>
+          <div class="brand-text-sub">Student • Aspiring Designer</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          16-YEAR-OLD STUDENT • BANGALORE
+        </div>
+        <h1>
+          Hi, I’m <span>ShahTaj</span><br />
+          learning to design for the web.
+        </h1>
+        <p class="hero-subtitle">
+          I’m a <strong>class 11 science student</strong> based in
+          <strong>Bangalore</strong>, passionate and hungry to learn
+          <strong>web design</strong> and <strong>graphic design</strong>.
+          Right now I’m building my foundations in <strong>HTML</strong> and
+          will soon explore more skills under the guidance of my teacher
+          <strong>Mr. Manaazir Rayyaan</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-main"> 
+            View early projects →
+          </a>
+          <a href="#contact" class="btn-ghost">
+            Let’s connect
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            Focus: <span>Web & UI basics</span>
+          </div>
+          <div class="hero-meta-item">
+            Learning: <span>HTML, layouts, clean design</span>
+          </div>
+          <div class="hero-meta-item">
+            Goal: <span>Create real-world projects</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Profile snapshot card">
+        <div class="corner-tag">Actively Learning</div>
+
+        <div class="tag-pill">
+          🎓 Student • <span>Science Stream</span>
+        </div>
+
+       <div class="avatar-circle">
+  
+</div>
+
+
+        <div class="hero-card-name">ShahTaj</div>
+        <div class="hero-card-role">High school student & aspiring designer</div>
+        <div class="hero-card-location">Bangalore, India</div>
+
+        <div class="hero-badges">
+          <span class="badge">HTML Beginner</span>
+          <span class="badge">Curious & Consistent</span>
+          <span class="badge">Web & Graphic Design</span>
+        </div>
+
+        <div class="hero-progress">
+          <div class="hero-progress-label">
+            <span>Web design learning journey</span>
+            <span>Step 1 of many</span>
+          </div>
+          <div class="hero-progress-bar">
+            <div class="hero-progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="mentor-note">
+          Guided by <strong>Mr. Manaazir Rayyaan</strong> to explore HTML,
+          web design fundamentals, and graphic design concepts step-by-step.
+        </div>
+      </aside>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-heading">
+        <h2>About Me</h2>
+        <p>
+          A motivated 16-year-old student discovering the world of design and
+          development, one lesson and one project at a time.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <article class="card">
+          <p>
+            I’m currently in <strong>11th standard (science stream)</strong> in
+            Bangalore. Beyond textbooks and exams, I’m deeply interested in
+            how websites look, feel and function.
+          </p>
+          <br />
+          <p>
+            I’ve started learning <strong>HTML</strong> and will soon add
+            <strong>CSS, JavaScript,</strong> and <strong>graphic design</strong>
+            tools to my skill set. My dream is to build clean, user-friendly
+            websites and creative visuals that people enjoy using and looking at.
+          </p>
+          <br />
+          <p>
+            Right now I’m focusing on building a strong base:
+            understanding structure, layouts, colors, and typography —
+            and practicing a lot with small projects.
+          </p>
+        </article>
+
+        <aside class="card">
+          <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem;">
+            Quick profile
+          </h3>
+          <ul class="info-list">
+            <li>
+              <span class="info-label">Name:</span>
+              <span class="info-value">ShahTaj</span>
+            </li>
+            <li>
+              <span class="info-label">Age:</span>
+              <span class="info-value">16 years</span>
+            </li>
+            <li>
+              <span class="info-label">Location:</span>
+              <span class="info-value">Bangalore, India</span>
+            </li>
+            <li>
+              <span class="info-label">Education:</span>
+              <span class="info-value">11th Standard, Science Stream</span>
+            </li>
+            <li>
+              <span class="info-label">Interests:</span>
+              <span class="info-value">
+                Web design, graphic design, front-end development
+              </span>
+            </li>
+            <li>
+              <span class="info-label">Currently learning:</span>
+              <span class="info-value">HTML & design basics</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="section-heading">
+        <h2>Skills & Learning Focus</h2>
+        <p>
+          These are the areas I’m working on right now, combining school studies
+          with self-learning and guidance from my mentor.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="card">
+          <h3 style="font-size: 0.95rem; margin-bottom: 0.4rem;">
+            Web Design Foundations
+          </h3>
+          <p class="skill-tagline">
+            Learning how to structure and present content on the web.
+          </p>
+          <div class="skill-pill-row">
+            <span class="skill-pill">HTML basics</span>
+            <span class="skill-pill">Semantic tags</span>
+            <span class="skill-pill">Clean layouts</span>
+          </div>
+
+          <div class="skill-meter-group">
+            <div>HTML</div>
+            <div class="meter-bar">
+              <div class="meter-fill" style="--level: 35%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-meter-group">
+            <div>CSS (up next)</div>
+            <div class="meter-bar">
+              <div class="meter-fill" style="--level: 10%;"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 style="font-size: 0.95rem; margin-bottom: 0.4rem;">
+            Graphic Design Basics
+          </h3>
+          <p class="skill-tagline">
+            Getting ready to design visuals that are simple, clear and modern.
+          </p>
+          <div class="skill-pill-row">
+            <span class="skill-pill">Canva / basic tools</span>
+            <span class="skill-pill">Color sense</span>
+            <span class="skill-pill">Typography</span>
+          </div>
+
+          <div class="skill-meter-group">
+            <div>Visual sense & creativity</div>
+            <div class="meter-bar">
+              <div class="meter-fill" style="--level: 45%;"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 style="font-size: 0.95rem; margin-bottom: 0.4rem;">
+            Soft Skills
+          </h3>
+          <p class="skill-tagline">
+            Good design is also about how you think, communicate and improve.
+          </p>
+          <div class="skill-pill-row">
+            <span class="skill-pill">Curious learner</span>
+            <span class="skill-pill">Attention to detail</span>
+            <span class="skill-pill">Open to feedback</span>
+          </div>
+
+          <div class="skill-meter-group">
+            <div>Consistency</div>
+            <div class="meter-bar">
+              <div class="meter-fill" style="--level: 55%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-meter-group">
+            <div>Communication</div>
+            <div class="meter-bar">
+              <div class="meter-fill" style="--level: 50%;"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-heading">
+        <h2>Early Projects & Practice</h2>
+        <p>
+          As I’m still learning, most of my work is practice-based. These are
+          example project ideas I’m working on or planning to build soon.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-tag">HTML Practice</div>
+          <h3>Personal Introduction Page</h3>
+          <p>
+            A simple single-page site where I practice headings, paragraphs,
+            links, lists and images to introduce myself.
+          </p>
+          <p class="project-meta">
+            Status: <span>In progress</span><br />
+            Focus: HTML structure & clean content.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tag">Design Practice</div>
+          <h3>Quote & Poster Designs</h3>
+          <p>
+            Digital posters using simple colors, shapes and typography to
+            improve my sense of visual balance and composition.
+          </p>
+          <p class="project-meta">
+            Status: <span>Planned</span><br />
+            Focus: Color, font pairing, alignment.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tag">Portfolio</div>
+          <h3>This Portfolio Website</h3>
+          <p>
+            A professional-style portfolio to track my journey from beginner
+            to confident designer and front-end developer.
+          </p>
+          <p class="project-meta">
+            Status: <span>v1 live</span><br />
+            Focus: Layout, readability, personal branding.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Journey / Timeline -->
+    <section id="journey">
+      <div class="section-heading">
+        <h2>Learning Journey</h2>
+        <p>
+          A short timeline of how I started, where I am now, and where I want
+          to go with my studies and design skills.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-title">Interest in web & design</div>
+            <div class="timeline-sub">
+              Became curious about how websites are created and how designs are
+              made for apps, posters and social media.
+            </div>
+            <div class="timeline-date">Early 2025</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-title">
+              Started 11th Standard (Science Stream)
+            </div>
+            <div class="timeline-sub">
+              Chose science to build a strong academic base while exploring
+              design and technology on the side.
+            </div>
+            <div class="timeline-date">Academic Year 2025–2026</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-title">Learning HTML foundations</div>
+            <div class="timeline-sub">
+              Began learning HTML under the guidance of
+              <strong>Mr. Manaazir Rayyaan</strong>, focusing on structure,
+              tags and layouts.
+            </div>
+            <div class="timeline-date">Current stage</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-title">Next steps</div>
+            <div class="timeline-sub">
+              Move into CSS, responsive design, basic JavaScript, and more
+              serious graphic design tools. Build small real-world level
+              projects and improve this portfolio over time.
+            </div>
+            <div class="timeline-date">Upcoming</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-heading">
+        <h2>Contact</h2>
+        <p>
+          I’m always happy to connect with teachers, designers and other
+          students who can guide, collaborate or share feedback.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <article class="card">
+          <p class="contact-highlight">
+            If you’d like to <strong>share advice, review my work</strong> or
+            simply say hello, feel free to reach out.
+          </p>
+
+          <div class="contact-detail">
+            <span>Email:</span>
+            <!-- Change this email to your real one -->
+            <a href="mailto:shah.taj@example.com">
+              shah.taj@example.com
+            </a>
+          </div>
+
+          <div class="contact-detail">
+            <span>City:</span> Bangalore, India
+          </div>
+
+          <p class="contact-note">
+            I’m still a student, and this portfolio is an evolving space.
+            As I learn more and complete projects, I’ll keep updating this
+            website with new work and improvements.
+          </p>
+
+          <div class="contact-links">
+            <!-- You can replace # with your real links later -->
+            <a href="#" class="contact-chip">LinkedIn (coming soon)</a>
+            <a href="#" class="contact-chip">GitHub (coming soon)</a>
+            <a href="#" class="contact-chip">Design samples (coming soon)</a>
+          </div>
+        </article>
+
+        <aside class="card">
+          <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem;">
+            Quick message
+          </h3>
+          <p class="form-note">
+            This is a sample form layout. You can connect it to an email
+            service like Formspree or Netlify Forms in the future.
+          </p>
+
+          <form class="contact-form">
+            <div class="form-row">
+              <div style="flex: 1 1 140px;">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your name" />
+              </div>
+              <div style="flex: 1 1 160px;">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="your@email.com" />
+              </div>
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                placeholder="Share your feedback, ideas or opportunities..."
+              ></textarea>
+            </div>
+
+            <p class="form-note">
+              This form is for design only right now &mdash; you can add real
+              form handling later.
+            </p>
+
+            <button type="button" class="btn-main btn-send">
+              ✉︎ Send (demo)
+            </button>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-row">
+        <div>© <span id="year"></span> ShahTaj. All rights reserved.</div>
+        <div>
+          Built while learning HTML • Guided by
+          <a href="#">Mr. Manaazir Rayyaan</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
